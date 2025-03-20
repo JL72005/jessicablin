@@ -4,9 +4,10 @@
 :root {
     --primary-color: #5a67d8;
     --secondary-color: #edf2f7;
-    --accent-color: #ed8936;
+    --accent-color: #5436e6;
     --text-color: #2d3748;
     --background-color: #ffffff;
+    }
 body {
     font-family: 'Open Sans', sans-serif; /* For body text */
     line-height: 1.6;
@@ -41,7 +42,7 @@ nav a {
 }
 /*for the CV button*/
 nav a:hover { 
-    color: #ed8936; /* Muted red on hover */
+    color: #5436e6; /* Muted red on hover */
 }
 
 /* Section Styling */
@@ -82,8 +83,8 @@ section {
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #ed8936;
-    background: linear-gradient(to right, #ed8936, #ed8936);
+    color: #5436e6;
+    background: linear-gradient(to right, #5436e6, #5436e6);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -106,7 +107,7 @@ section {
 }
 
 .social-links li a {
-    color: #ed8936;
+    color: #5436e6;
     font-size: 1.2rem;
     text-decoration: none;
     font-weight: bold;
@@ -124,6 +125,7 @@ section {
 .certificate-image {
     width: 500px;
     height: 400px;
+    place-items: center
     border-radius: 0 !important; /* Change this to 0 for a square */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Keeps the shadow effect */
 }
@@ -151,7 +153,7 @@ section {
 }
 
 .project {
-    display: flex;
+    display: left/*flex;*/
     flex-direction: column;
     align-items: center;
     width: 45%; /* Each project takes up half the width */
