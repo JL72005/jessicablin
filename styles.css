@@ -47,13 +47,21 @@ nav a:hover {
 
 /* Section Styling */
 section {
-    padding: 40px 20px; /* Increased padding for better spacing */
-    margin: 20px auto;
-    max-width: 1200px; /* Limit section width for better readability */
-    background: rgba(13, 37, 191, 0.281);
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  width: 100%;
+  max-width: none;        /* remove the 1200px cap */
+  margin: 0;              /* remove auto-centering margin */
+  padding: 40px 0;        /* vertical padding only */
+  background: rgba(13, 37, 191, 0.281);
+  border-radius: 0;       /* full-width sections usually shouldn’t be rounded */
+  box-shadow: none;       /* optional: remove shadow for full-width */
 }
+
+.section-inner {
+  max-width: 1200px;      /* keeps text readable */
+  margin: 0 auto;
+  padding: 0 20px;        /* side padding for mobile */
+}
+
 
 /* About Section */
 .about-container {
@@ -125,7 +133,7 @@ section {
 .certificate-image {
     width: 500px;
     height: 400px;
-    place-items: center
+    place-items: center;
     border-radius: 0 !important; /* Change this to 0 for a square */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Keeps the shadow effect */
 }
@@ -149,11 +157,11 @@ section {
     gap: 20px;
     flex-wrap: wrap; /* Allows stacking on smaller screens */
     margin-top: 20px;
-    color: #2c2cc777
+    color: #2c2cc777;
 }
 
 .project {
-    display: left/*flex;*/
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 45%; /* Each project takes up half the width */
@@ -180,22 +188,89 @@ section {
 }
 
 .project-link {
-    display: inline-flex; /* Flex behavior for consistent sizing */
-    justify-content: center;
-    align-items: center;
-    width: 150px; /* Ensures buttons are the same width */
-    height: 40px; /* Consistent height */
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
-    background: #5a67d8;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: auto;          /* ✅ remove fixed width */
+  padding: 10px 14px;   /* ✅ use padding instead */
+  height: 40px;
+  white-space: nowrap;  /* ✅ prevents "View" / "webpage" wrapping */
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background: #5a67d8;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .project-link:hover {
     background-color: #2c2cc777;
     transform: scale(1.05);
+}
+
+/* Research Section Cards */
+.research-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.research {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;                 /* same as project */
+  background: #ebebeb77;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.research-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+}
+
+.research-text {
+  font-size: 1rem;
+  color: #2d3748;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.research-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.research-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 14px;
+  height: 40px;
+  white-space: nowrap;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background: #5a67d8;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.research-link:hover {
+  background-color: #2c2cc777;
+  transform: scale(1.05);
 }
 
 /* Form Styling */
@@ -246,10 +321,13 @@ footer {
     }
 
     .profile-image {
-        width: 200px;
-        height: auto;
-        margin: 0 auto;
+        width: 260px;
+        height: 340px;
+        object-fit: cover;
+        border-radius: 18px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
+
 
     .projects-container {
         flex-direction: column;
